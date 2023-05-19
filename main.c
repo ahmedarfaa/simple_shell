@@ -22,7 +22,7 @@ int main(int __attribute__((unused)) argc, char **argv, char **env)
 	from_pipe = true;
 	while (1 && !from_pipe)
 	{
-		
+
 		write(STDOUT_FILENO, "$ ", 2);
 		read = getline(&input, &input_size, stdin);
 	if (read == -1)
