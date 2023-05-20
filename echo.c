@@ -52,15 +52,9 @@ void execute_echo(char **args, int status)
 		}
 		}
 		else
-		{
 			write(STDOUT_FILENO, args[i], _strlen(args[i]));
-		}
-
 		if (args[i + 1] != NULL)
-		{
 			write(STDOUT_FILENO, " ", 1);
-		}
 	}
-
 		write(STDOUT_FILENO, "\n", 1);
 }
