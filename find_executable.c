@@ -86,10 +86,13 @@ char *find_executable(char *fname, char **env)
 	if (full_path == NULL)
 	{
 		perror("malloc");
+		free(path);
 		exit(1);
 	}
 	if (_snprintf(full_path, path_len + fname_len + 2, "%s/%s", token, fname) < 0)
 	{
+		free(full_path);
+		free(path);
 		return (NULL);
 	}
 	if (access(full_path, X_OK) == 0)
