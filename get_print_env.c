@@ -39,7 +39,8 @@ void execute_printenv(char **env, char *var)
 		value = _getenv(var);
 		if (value != NULL)
 		{
-			printf("%s\n", value);
+			write(STDOUT_FILENO, value, _strlen(value));
+			write(STDOUT_FILENO, "\n", 1);
 		}
 		else
 		{
@@ -54,8 +55,9 @@ void execute_printenv(char **env, char *var)
 		envp = env;
 		while (*envp != NULL)
 		{
-		printf("%s\n", *envp);
-		envp++;
+			write(STDOUT_FILENO, *envp, _strlen(*envp));
+			write(STDOUT_FILENO, "\n", 1);
+			envp++;
 		}
 	}
 }
