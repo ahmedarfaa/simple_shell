@@ -1,6 +1,17 @@
 #include "main.h"
 
 /**
+ * sigint_handler - E
+ * signum: ..
+ *
+ */
+
+void sigint_handler(int signum)
+{
+	(void)signum;
+    g_running = 0;
+}
+/**
  * execute_clear - E
  *
  */

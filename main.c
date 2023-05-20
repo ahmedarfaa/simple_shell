@@ -19,8 +19,10 @@ int main(int argc, char **argv, char **env)
 	pid_t pid;
 	char error_message[50];
 	bool from_pipe = false;
+	volatile sig_atomic_t g_running = 1;
 	(void) argv;
 
+	signal(SIGINT, sigint_handler);
 	if (argc > 1)
 	{
 	execute_commands_from_file(argv[1], env);
@@ -28,7 +30,7 @@ int main(int argc, char **argv, char **env)
 	}
 	if (fstat(STDIN_FILENO, &st) == 0 && S_ISFIFO(st.st_mode))
 	from_pipe = true;
-	while (1 && !from_pipe)
+	while (g_running && !from_pipe)
 	{
 		count++;
 		write(STDOUT_FILENO, "$ ", 2);
