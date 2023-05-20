@@ -18,6 +18,7 @@ char *_strdup(const char *s)
 		_memcpy(p, s, len);
 	}
 		return (p);
+		free(p);
 }
 
 /**

@@ -54,4 +54,5 @@ void _setenv(char ***envp, const char *name, const char *value)
 	new_environ[i] = new_env;
 	new_environ[i + 1] = NULL;
 	*envp = new_environ;
+	free(new_env);
 }
