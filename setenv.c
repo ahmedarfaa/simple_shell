@@ -28,6 +28,7 @@ void _setenv(char ***envp, const char *name, const char *value)
 	if (new_env == NULL)
 	{
 		perror("malloc");
+		free(new_env);
 		return;
 	}
 	_snprintf(new_env, total_len, "%s=%s", name, value);
