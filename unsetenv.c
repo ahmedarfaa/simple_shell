@@ -16,10 +16,13 @@ void execute_setenv(char **args)
 void execute_unsetenv(char **args)
 {
 	int name_l, i, j;
+	char err_message[50];
 
 	if (args[1] == NULL)
 	{
-		fprintf(stderr, "Usage: unsetenv VARIABLE\n");
+		const char *error_message = "Usage: unsetenv VARIABLE\n";
+
+		write(STDERR_FILENO, error_message, strlen(error_message));
 		return;
 	}
 	name_l = _strlen(args[1]);
@@ -35,5 +38,6 @@ void execute_unsetenv(char **args)
 			return;
 		}
 	}
-	fprintf(stderr, "Variable %s not found\n", args[1]);
+	_sprintf(err_message, "Variable %s not found\n", args[1]);
+	write(STDERR_FILENO, err_message, strlen(err_message));
 }

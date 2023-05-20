@@ -15,7 +15,9 @@ void _setenv(char ***envp, const char *name, const char *value)
 
 	if (name == NULL || value == NULL)
 	{
-		fprintf(stderr, "Usage: setenv VARIABLE VALUE\n");
+		const char *error_message = "Usage: setenv VARIABLE VALUE\n";
+
+		write(STDERR_FILENO, error_message, strlen(error_message));
 		return;
 	}
 
