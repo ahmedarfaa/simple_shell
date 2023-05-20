@@ -42,9 +42,10 @@ void execute_echo(char **args, int status)
 			write(STDOUT_FILENO, path, _strlen(path));
 		}
 		}
+
 		else if (_isupper(args[i][0]))
 		{
-			char *path = getenv(args[i]);
+			char *path = _getenv(args[i]);
 		if (path != NULL)
 		{
 			write(STDOUT_FILENO, path, _strlen(path));

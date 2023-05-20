@@ -64,7 +64,9 @@ char *find_executable(char *fname, char **env)
 
 	if (path_env == NULL)
 	{
-		fprintf(stderr, "PATH environment variable not set\n");
+		const char *error_message = "PATH environment variable not set\n";
+
+		write(STDERR_FILENO, error_message, strlen(error_message));
 		return (NULL);
 	}
 

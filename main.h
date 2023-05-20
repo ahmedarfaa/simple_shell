@@ -39,7 +39,6 @@ unsigned int _equal2(char cut, const char *string);
 char *_getenv(const char *name);
 void execute_echo(char **args, int status);
 void execute_clear(void);
-char *_strchr(char *s, char c);
 int _sprintf(char *buf, const char *format, ...);
 int execute_command(char **args, char **env, int *status);
 void execute_commands_from_file(char *filename, char **env);

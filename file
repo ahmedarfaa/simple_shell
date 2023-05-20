@@ -4,4 +4,10 @@ echo Holberton
 /bin/ls
 
 
-/bin/ls
+
+$PATH
+
+echo $$
+
+
+echo $?

@@ -57,7 +57,7 @@ int main(int argc, char **argv, char **env)
 		{
 		if (execve(fullpath, args, env) == -1)
 		{
-			_sprintf(error_message, "./hsh: %d: %s: not found\n", count, args[0]);
+			_sprintf(error_message, "%s: %d: %s: not found\n", argv[0], count, args[0]);
 			write(STDERR_FILENO, error_message, strlen(error_message));
 			exit(127);
 		}

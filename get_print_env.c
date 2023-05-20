@@ -13,7 +13,7 @@ char *_getenv(const char *name)
 
 	while (*env != NULL)
 	{
-		if (strncmp(*env, name, name_len) == 0 && (*env)[name_len] == '=')
+		if (_strncmp(*env, name, name_len) == 0 && (*env)[name_len] == '=')
 		{
 			return (*env + name_len + 1);
 		}
@@ -43,7 +43,10 @@ void execute_printenv(char **env, char *var)
 		}
 		else
 		{
-			fprintf(stderr, "%s: environment variable not found\n", var);
+			char error_message[50];
+
+			_sprintf(error_message, "%s: environment variable not found\n", var);
+			write(STDERR_FILENO, error_message, strlen(error_message));
 		}
 	}
 	else
