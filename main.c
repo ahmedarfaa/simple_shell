@@ -34,7 +34,7 @@ int main(int argc, char **argv, char **env)
 		write(STDOUT_FILENO, "$ ", 2);
 		read = getline(&input, &input_size, stdin);
 		if (read == -1)
-			exit(1);
+			free(input), exit(1);
 		if (input[read - 1] == '\n')
 			input[read - 1] = '\0';
 		if (input[0] == '\0')
