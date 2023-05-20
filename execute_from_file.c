@@ -42,7 +42,7 @@ void execute_commands_from_file(char *filename, char **env)
 	{
 		if (execve(fullpath, args, env) == -1)
 		{
-		_sprintf(error_message, "./hsh: %d: %s: not found\n", count, args[0]);
+		_sprintf(error_message, "%s: %d: %s: not found\n", args[0], count, args[0]);
 		write(STDERR_FILENO, error_message, strlen(error_message));
 		exit(127);
 		}
