@@ -31,9 +31,10 @@ int main(int argc, char **argv, char **env)
 	}
 	if (fstat(STDIN_FILENO, &st) == 0 && S_ISFIFO(st.st_mode))
 	from_pipe = true;
-	while (g_running && !from_pipe)
+	while (g_running )
 	{
 		count++;
+		if (!from_pipe)
 		write(STDOUT_FILENO, "$ ", 2);
 		read = getline(&input, &input_size, stdin);
 		if (read == -1)
