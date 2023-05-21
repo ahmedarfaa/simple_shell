@@ -12,7 +12,7 @@
 #include <stdbool.h>
 #include <stdarg.h>
 #include <fcntl.h>
-#include <signal.h>
+
 
 #ifndef SIZE
 #define SIZE 1024
