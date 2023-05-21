@@ -19,9 +19,7 @@
 #endif
 extern char **environ;
 
-extern volatile sig_atomic_t g_running; 
 
-void sigint_handler(int signum);
 void execute_cd(char **args);
 void execute_exit(char **args);
 char *find_executable(char *filename, char **env);
