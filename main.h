@@ -18,7 +18,7 @@
 #endif
 extern char **environ;
 
-volatile sig_atomic_t g_running; 
+extern volatile sig_atomic_t g_running; 
 
 void sigint_handler(int signum);
 void execute_cd(char **args);

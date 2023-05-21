@@ -8,6 +8,8 @@
  * Return: 0 insuccess.
  */
 
+volatile sig_atomic_t g_running = 1;
+
 int main(int argc, char **argv, char **env)
 {
 	char *input = NULL, *args[SIZE], *token, *filename, *fullpath;
@@ -19,7 +21,6 @@ int main(int argc, char **argv, char **env)
 	pid_t pid;
 	char error_message[50];
 	bool from_pipe = false;
-	volatile sig_atomic_t g_running = 1;
 	(void) argv;
 
 	signal(SIGINT, sigint_handler);
