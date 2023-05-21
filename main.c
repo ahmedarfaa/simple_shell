@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <signal.h>
 /**
  * main - E
  * @argc: ..
