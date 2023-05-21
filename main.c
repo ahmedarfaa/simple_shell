@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **env)
 	}
 	if (fstat(STDIN_FILENO, &st) == 0 && S_ISFIFO(st.st_mode))
 	from_pipe = true;
-	while (g_running )
+	while (g_running)
 	{
 		count++;
 		if (!from_pipe)
