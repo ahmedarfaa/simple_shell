@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _snprintf - E
- * @str: ..
- * @size: ..
- * @format: ..
- * Return: ..
+ * _snprintf - a function that returns a len
+ * @str: input string
+ * @size: input size
+ * @format: input type
+ * Return: len
  */
 
 int _snprintf(char *str, size_t size, const char *format, ...)
