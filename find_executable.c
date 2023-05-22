@@ -3,9 +3,9 @@
 
 /**
  * find_executable - E
- * @fname: ..
- * @env: ..
- * Return: ..
+ * @fname: input name
+ * @env: input enviroment
+ * Return: Null
  *
  */
 char *find_executable(char *fname, char **env)
@@ -26,15 +26,10 @@ char *find_executable(char *fname, char **env)
 	if (full_path == NULL)
 	{
 		perror("_strdup");
-		exit(1);
-	}
-		return (full_path);
-	}
+		exit(1); }
+		return (full_path); }
 	else
-	{
-		return (NULL);
-	}
-	}
+		return (NULL); }
 	else if (_strncmp(fname, "./", 2) == 0)
 	{
 	if (access(fname + 2, X_OK) == 0)
@@ -43,40 +38,28 @@ char *find_executable(char *fname, char **env)
 	if (full_path == NULL)
 	{
 		perror("_strdup");
-		exit(1);
-	}
-		return (full_path);
-	}
+		exit(1); }
+		return (full_path); }
 	else
-	{
-		return (NULL);
-	}
-	}
+		return (NULL); }
 
 	for (i = 0; env[i] != NULL; i++)
 	{
 	if (_strncmp(env[i], "PATH=", 5) == 0)
 	{
 		path_env = env[i] + 5;
-		break;
-	}
-	}
-
+		break; }}
 	if (path_env == NULL)
 	{
 		const char *error_message = "PATH environment variable not set\n";
 
 		write(STDERR_FILENO, error_message, _strlen(error_message));
-		return (NULL);
-	}
-
+		return (NULL); }
 		path = _strdup(path_env);
 	if (path == NULL)
 	{
 		perror("_strdup");
-		exit(1);
-	}
-
+		exit(1); }
 		token = _stringtok(path, ":");
 	while (token != NULL)
 	{
@@ -87,22 +70,17 @@ char *find_executable(char *fname, char **env)
 	{
 		perror("malloc");
 		free(path);
-		exit(1);
-	}
+		exit(1); }
 	if (_snprintf(full_path, path_len + fname_len + 2, "%s/%s", token, fname) < 0)
 	{
 		free(full_path);
 		free(path);
-		return (NULL);
-	}
+		return (NULL); }
 	if (access(full_path, X_OK) == 0)
 	{
 		free(path);
-		return (full_path);
-	}
+		return (full_path); }
 		free(full_path);
-		token = _stringtok(NULL, ":");
-	}
+		token = _stringtok(NULL, ":"); }
 		free(path);
-	return (NULL);
-}
+	return (NULL); }

@@ -1,10 +1,11 @@
 #include "main.h"
 
+
 /**
- * execute_commands_from_file - E
- * @filename: ..
- * @env: ..
- */
+ * execute_commands_from_file - a function that executes from a file
+ * @filename: input file name
+ * @env: input env
+*/
 
 void execute_commands_from_file(char *filename, char **env)
 {
