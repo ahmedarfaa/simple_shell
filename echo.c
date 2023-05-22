@@ -13,7 +13,7 @@ void execute_echo(char **args, int status)
 	{
 		if (args[i][0] == '"' && args[i][_strlen(args[i]) - 1] == '"')
 			write(STDOUT_FILENO, args[i] + 1, _strlen(args[i]) - 2);
-		else if (_strcmp(args[i], "$$") == 0)
+		else if (_strncmp(args[i], "$$", 2) == 0)
 		{
 			pid_t value = getpid();
 		if (value >= 0)
