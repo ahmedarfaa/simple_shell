@@ -33,8 +33,7 @@ void execute_commands_from_file(char *filename, char **env)
 		token = _stringtok(commands[c], " "), i = 0;
 	while (token != NULL)
 	{
-		args[i] = token, i++, token = _stringtok(NULL, " ");
-	}
+		args[i] = token, i++, token = _stringtok(NULL, " "); }
 		args[i] = NULL;
 	if (execute_command(args, env, &status) == -1)
 	{	fullpath = find_executable(args[0], env), pid = fork();
@@ -44,16 +43,10 @@ void execute_commands_from_file(char *filename, char **env)
 		{
 		_sprintf(error_message, "%s: %d: %s: not found\n", args[0], count, args[0]);
 		write(STDERR_FILENO, error_message, _strlen(error_message));
-		exit(127);
-		}
-	}
+		exit(127); }}
 	else if (pid < 0)
 		perror("fork"), exit(1);
 	else
-		waitpid(pid, &status, 0);
-	}
-	}
-	}
+		waitpid(pid, &status, 0); }}}
 	fclose(fp);
-	free(input);
-}
+	free(input); }
