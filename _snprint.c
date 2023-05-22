@@ -34,56 +34,41 @@ int _snprintf(char *str, size_t size, const char *format, ...)
 		while (*s != '\0' && len < (int)size - 1)
 		{
 			*p++ = *s++;
-			len++;
-		}
-		break;
-		}
+			len++; }
+		break; }
 		case 'd':
 		{
 			d = va_arg(args, int);
-
 			temp = d;
 		if (d < 0)
 		{
 			*p++ = '-';
 			len++;
-		temp = -temp;
-		}
+		temp = -temp; }
 		if (temp == 0)
 		{
-			buf[n++] = '0';
-		}
+			buf[n++] = '0'; }
 		else
 		{
 		while (temp > 0)
 		{
 			buf[n++] = '0' + temp % 10;
-			temp /= 10;
-		}
-		}
+			temp /= 10; }}
 		while (n > 0 && len < (int)size - 1)
 		{
 			*p++ = buf[--n];
-			len++;
-		}
-			break;
-		}
+			len++; }
+			break; }
 		default:
 			va_end(args);
-			return (-1);
-		}
-		}
+			return (-1); }}
+
 		else
 		{
 			*p++ = *fmt;
-			len++;
-		}
-			fmt++;
-		}
-
+			len++; }
+			fmt++; }
 			va_end(args);
-
 		*p = '\0';
-
 		return (len);
 }
