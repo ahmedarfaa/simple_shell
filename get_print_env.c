@@ -47,7 +47,7 @@ void execute_printenv(char **env, char *var)
 			char error_message[50];
 
 			_sprintf(error_message, "%s: environment variable not found\n", var);
-			write(STDERR_FILENO, error_message, strlen(error_message));
+			write(STDERR_FILENO, error_message, _strlen(error_message));
 		}
 	}
 	else

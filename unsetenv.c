@@ -21,7 +21,7 @@ void execute_unsetenv(char **args)
 	{
 	const char *error_message = "Usage: unsetenv VARIABLE\n";
 
-	write(STDERR_FILENO, error_message, strlen(error_message));
+	write(STDERR_FILENO, error_message, _strlen(error_message));
 	return;
 	}
 
@@ -41,5 +41,5 @@ void execute_unsetenv(char **args)
 	}
 
 	_sprintf(err_message, "Variable %s not found\n", args[1]);
-	write(STDERR_FILENO, err_message, strlen(err_message));
+	write(STDERR_FILENO, err_message, _strlen(err_message));
 }

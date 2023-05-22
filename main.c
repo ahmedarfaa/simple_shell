@@ -28,8 +28,7 @@ int main(int argc, char **argv, char **env)
 	if (argc > 1)
 	{
 	execute_commands_from_file(argv[1], env);
-	return (0);
-	}
+	return (0); }
 	if (fstat(STDIN_FILENO, &st) == 0 && S_ISFIFO(st.st_mode))
 	from_pipe = true;
 	while (1)
@@ -63,18 +62,13 @@ int main(int argc, char **argv, char **env)
 		if (execve(fullpath, args, env) == -1)
 		{
 			_sprintf(error_message, "%s: %d: %s: not found\n", argv[0], count, args[0]);
-			write(STDERR_FILENO, error_message, strlen(error_message));
-			exit(127);
-		}
-		}
+			write(STDERR_FILENO, error_message, _strlen(error_message));
+			exit(127); }}
 		else if (pid < 0)
 		perror("fork"), exit(1);
 		else
 		waitpid(pid, &status, 0);
-		free(fullpath);
-		}
-		}
-		}
+		free(fullpath); }}}
 
 	free(input);
 	return (0);
