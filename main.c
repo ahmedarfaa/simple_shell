@@ -68,7 +68,10 @@ int main(int argc, char **argv, char **env)
 		perror("fork"), exit(1);
 		else
 		waitpid(pid, &status, 0);
-		free(fullpath); }}}
+		free(fullpath); 
+		}
+		}
+	}
 
 	free(input);
 	return (0);
