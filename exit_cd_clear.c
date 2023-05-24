@@ -2,7 +2,7 @@
 
 
 /**
- * execute_clear - E
+ * execute_clear - this function execute the clear
  *
  */
 void execute_clear(void)
@@ -11,8 +11,8 @@ void execute_clear(void)
 }
 
 /**
- * execute_cd -E
- * @args: ..
+ * execute_cd - a function that executes the change directory
+ * @args: input arguements
  *
  */
 
@@ -34,9 +34,9 @@ void execute_cd(char **args)
 }
 
 /**
- * execute_exit - E
- * @args: ..
- * @status: ..
+ * execute_exit - a function that execute exit
+ * @args: input args
+ * @status: status input
  */
 void execute_exit(char **args, int status)
 {
