@@ -26,7 +26,7 @@ char *find_executable(char *fname, char **env)
 	if (full_path == NULL)
 	{
 		perror("_strdup");
-		exit(1); }
+		exit(127); }
 		return (full_path); }
 	else
 		return (NULL); }
@@ -38,7 +38,7 @@ char *find_executable(char *fname, char **env)
 	if (full_path == NULL)
 	{
 		perror("_strdup");
-		exit(1); }
+		exit(127); }
 		return (full_path); }
 	else
 		return (NULL); }
@@ -59,7 +59,7 @@ char *find_executable(char *fname, char **env)
 	if (path == NULL)
 	{
 		perror("_strdup");
-		exit(1); }
+		exit(127); }
 		token = _stringtok(path, ":");
 	while (token != NULL)
 	{
@@ -70,7 +70,7 @@ char *find_executable(char *fname, char **env)
 	{
 		perror("malloc");
 		free(path);
-		exit(1); }
+		exit(127); }
 	if (_snprintf(full_path, path_len + fname_len + 2, "%s/%s", token, fname) < 0)
 	{
 		free(full_path);

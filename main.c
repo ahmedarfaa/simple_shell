@@ -65,7 +65,7 @@ int main(int argc, char **argv, char **env)
 			write(STDERR_FILENO, error_message, _strlen(error_message));
 			exit(127); }}
 		else if (pid < 0)
-		perror("fork"), exit(1);
+		perror("fork"), exit(127);
 		else
 		waitpid(pid, &status, 0);
 		free(fullpath); 
