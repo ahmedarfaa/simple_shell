@@ -50,7 +50,7 @@ void execute_exit(char **args, int status)
 	{
 		char exit_status[10];
 
-                        _sprintf(exit_status, "%d", WEXITSTATUS(status));
-			exit(_atoi(exit_status));
+		_sprintf(exit_status, "%d", WEXITSTATUS(status));
+		exit(_atoi(exit_status));
 	}
 }
