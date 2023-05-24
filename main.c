@@ -39,7 +39,7 @@ int main(int argc, char **argv, char **env)
 		read = getline(&input, &input_size, stdin);
 		if (read == -1)
 		{
-			write(STDOUT_FILNO, "\n", 1);
+			write(STDOUT_FILENO, "\n", 1);
 			free(input), exit(127);
 		}
 		if (input[read - 1] == '\n')
