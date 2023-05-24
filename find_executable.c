@@ -5,11 +5,13 @@
  * find_executable - E
  * @fname: input name
  * @env: input enviroment
+ * @count: ..
  * Return: Null
  *
  */
-char *find_executable(char *fname, char **env)
+char *find_executable(char *fname, char **env, int count)
 {
+	char error_message[50];
 	char *full_path = NULL;
 	char *path_env = NULL;
 	char *path = NULL;
@@ -51,10 +53,9 @@ char *find_executable(char *fname, char **env)
 		break; }}
 	if (path_env == NULL)
 	{
-		const char *error_message = "PATH environment variable not set\n";
-
+		_sprintf(error_message, "./hsh: %d: %s: not found\n", count, fname);
 		write(STDERR_FILENO, error_message, _strlen(error_message));
-		return (NULL); }
+		exit(127);	}
 		path = _strdup(path_env);
 	if (path == NULL)
 	{

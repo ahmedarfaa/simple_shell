@@ -37,7 +37,7 @@ void execute_commands_from_file(char *filename, char **env)
 		args[i] = token, i++, token = _stringtok(NULL, " "); }
 		args[i] = NULL;
 	if (execute_command(args, env, &status) == -1)
-	{	fullpath = find_executable(args[0], env), pid = fork();
+	{	fullpath = find_executable(args[0], env, count), pid = fork();
 	if (pid == 0)
 	{
 		if (execve(fullpath, args, env) == -1)

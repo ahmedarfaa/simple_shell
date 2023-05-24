@@ -56,7 +56,7 @@ int main(int argc, char **argv, char **env)
 		if (execute_command(args, env, &status) == -1)
 		{
 		filename = args[0];
-		fullpath = find_executable(filename, env), pid = fork();
+		fullpath = find_executable(filename, env, count), pid = fork();
 		if (pid == 0)
 		{
 		if (execve(fullpath, args, env) == -1)
