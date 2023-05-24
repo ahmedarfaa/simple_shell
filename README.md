@@ -6,8 +6,8 @@ File - is a bash test file used to test the shell.
 hsh - is the output name for the shell we have.
 main.h - a header file that contains the functions utilized in the project.
 main.c - calls every function used in the rest of the files.
-MandatoryChecker.sh - is a bash script that is used to validated the shell.
-check.sh - bash commands to check some shell behaviors.
+Tests.sh - is a bash script that is used to validated the shell.
+checks.sh - bash commands to check some shell behaviors.
 unsetenv.c - a file for impelementing the unset command.
 setenv.c - is a file to impelement the set enviorment variables and commands.
 sprintf.c - updated functions for requirements validation.
