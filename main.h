@@ -20,7 +20,7 @@ extern char **environ;
 
 
 void execute_cd(char **args);
-void execute_exit(char **args);
+void execute_exit(char **args, int status);
 char *find_executable(char *filename, char **env);
 void execute_printenv(char **env, char *var);
 void execute_setenv(char **args);

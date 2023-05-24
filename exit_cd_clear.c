@@ -38,16 +38,19 @@ void execute_cd(char **args)
  * @args: ..
  *
  */
-void execute_exit(char **args)
+void execute_exit(char **args, int status)
 {
 	if (args[1] != NULL)
 	{
-		int exit_code = atoi(args[1]);
+		int exit_code = _atoi(args[1]);
 
 		exit(exit_code);
 	}
 	else
 	{
-		exit(0);
+		char exit_status[10];
+
+                        _sprintf(exit_status, "%d", WEXITSTATUS(status));
+			exit(_atoi(exit_status));
 	}
 }
