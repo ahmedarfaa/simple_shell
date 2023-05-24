@@ -36,7 +36,7 @@ void execute_cd(char **args)
 /**
  * execute_exit - E
  * @args: ..
- *
+ * @status: ..
  */
 void execute_exit(char **args, int status)
 {
