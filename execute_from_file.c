@@ -20,7 +20,7 @@ void execute_commands_from_file(char *filename, char **env)
 
 	fp = fopen(filename, "r");
 	if (fp == NULL)
-		perror("Error opening file"), exit(1);
+		perror("Error opening file"), exit(127);
 	while ((read = getline(&input, &input_size, fp)) != -1)
 	{
 	if (input[read - 1] == '\n')
