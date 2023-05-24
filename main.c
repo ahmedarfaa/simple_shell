@@ -35,7 +35,7 @@ int main(int argc, char **argv, char **env)
 	{
 		count++;
 		if (!from_pipe)
-		write(STDOUT_FILENO, " ($) ", 5);
+		write(STDOUT_FILENO, "$ ", 2);
 		read = getline(&input, &input_size, stdin);
 		if (read == -1)
 			free(input), exit(1);
